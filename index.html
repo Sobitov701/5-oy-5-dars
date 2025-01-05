@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form id="form">
+      <input type="text" id="firstName" />
+
+      <input type="text" id="lastName" />
+
+      <input type="date" id="age" />
+
+      <input type="text" id="phone" />
+
+      <input type="email" id="email" />
+
+      <input type="password" id="password" />
+
+      <input type="password" id="confirmPassword" />
+
+      <textarea id="address"></textarea>
+
+      <input type="text" id="postalCode" />
+
+      <select id="gender">
+        <option value="male">Erkak</option>
+        <option value="female">Ayol</option>
+      </select>
+
+      <textarea id="interests"></textarea>
+
+      <label>
+        <input type="checkbox" id="terms" />
+        Qoidalarga roziman
+      </label>
+      
+      <button id="submitButton">Yuborish</button>
+    </form> -->
+
+    <form id="nameForm">
+      <input type="text" id="nameInput" placeholder="Ismingizni yozing" />
+      <button type="button" id="showNameButton">Ko‘rsat</button>
+    </form>
+    <div id="result"></div>
+
+    <div class="full-name">Asadbek</div>
+    <button class="edit">Tahrirlash</button>
+    <button style="display: none" class="save">Saqlash</button>
+
+    <form id="passwordForm">
+      <label for="password">Parol:</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Parolni kiriting"
+        required
+      />
+      <br /><br />
+      <label for="confirmPassword">Parolni tasdiqlash:</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        placeholder="Parolni qayta kiriting"
+        required
+      />
+      <br /><br />
+      <button type="submit">Tasdiqlash</button>
+    </form>
+
+    <input type="text" id="imageUrl" placeholder="Rasm manzilini kiriting" />
+    <button id="button">Qo'shish</button>
+    <div id="output"></div>
+
+    <input type="text" id="taskInput" placeholder=" ishni kiriting" />
+    <button id="addButton">Qo'shish</button>
+    <ul id="taskList"></ul>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
