@@ -1,164 +1,164 @@
-// function num(
-//   firstName,
-//   lastName,
-//   age,
-//   phone,
-//   email,
-//   password,
-//   confirmPassword,
-//   address,
-//   postalCode,
-//   gender,
-//   interests,
-//   termsChecked
-// ) {
-//   const regex = /^[A-Za-z]+$/;
+function num(
+  firstName,
+  lastName,
+  age,
+  phone,
+  email,
+  password,
+  confirmPassword,
+  address,
+  postalCode,
+  gender,
+  interests,
+  termsChecked
+) {
+  const regex = /^[A-Za-z]+$/;
 
-//   if (!firstName) {
-//     alert("Ism  maydon bo'sh bo'lmasligi kerak.");
-//   }
+  if (!firstName) {
+    alert("Ism  maydon bo'sh bo'lmasligi kerak.");
+  }
 
-//   if (firstName.length < 2) {
-//     alert("Ism kamida 2 ta harfdan iborat bo'lishi kerak.");
-//   }
+  if (firstName.length < 2) {
+    alert("Ism kamida 2 ta harfdan iborat bo'lishi kerak.");
+  }
 
-//   if (!regex.test(firstName)) {
-//     alert("Ism faqat lotin harflaridan iborat bo'lishi kerak.");
-//   }
+  if (!regex.test(firstName)) {
+    alert("Ism faqat lotin harflaridan iborat bo'lishi kerak.");
+  }
 
-//   if (!lastName) {
-//     alert("Familya maydon bo'sh bo'lmasligi kerak.");
-//   }
+  if (!lastName) {
+    alert("Familya maydon bo'sh bo'lmasligi kerak.");
+  }
 
-//   if (lastName.length < 2) {
-//     alert("familya kamida 2 ta harfdan iborat bo'lishi kerak.");
-//   }
+  if (lastName.length < 2) {
+    alert("familya kamida 2 ta harfdan iborat bo'lishi kerak.");
+  }
 
-//   if (!regex.test(lastName)) {
-//     alert("familya faqat lotin harflaridan iborat bo'lishi kerak.");
-//   }
+  if (!regex.test(lastName)) {
+    alert("familya faqat lotin harflaridan iborat bo'lishi kerak.");
+  }
 
-//   if (!age) {
-//     alert("Yosh maydon bo'sh bo'lmasligi kerak.");
-//   }
+  if (!age) {
+    alert("Yosh maydon bo'sh bo'lmasligi kerak.");
+  }
 
-//   if (2025 - age < 18) {
-//     alert("Yoshingiz 18 dan katta bo‘lishi kerak.");
-//   }
+  if (2025 - age < 18) {
+    alert("Yoshingiz 18 dan katta bo‘lishi kerak.");
+  }
 
-//   const phoneRegex = /^\+(\d{9,15})$/;
-//   if (!phone) {
-//     alert("Telefon maydon bo'sh bo'lmasligi kerak.");
-//   }
-//   if (!phoneRegex.test(phone)) {
-//     alert("Telefon raqamini to‘g‘ri kiriting, masalan: +998901234567.");
-//   }
+  const phoneRegex = /^\+(\d{9,15})$/;
+  if (!phone) {
+    alert("Telefon maydon bo'sh bo'lmasligi kerak.");
+  }
+  if (!phoneRegex.test(phone)) {
+    alert("Telefon raqamini to‘g‘ri kiriting, masalan: +998901234567.");
+  }
 
-//   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-//   if (!email) {
-//     alert("Emile maydon bo'sh bo'lmasligi kerak.");
-//   }
-//   if (!emailRegex.test(email)) {
-//     alert("Emailni to‘g‘ri kiriting.");
-//   }
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!email) {
+    alert("Emile maydon bo'sh bo'lmasligi kerak.");
+  }
+  if (!emailRegex.test(email)) {
+    alert("Emailni to‘g‘ri kiriting.");
+  }
 
-//   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
-//   if (!password) {
-//     alert("Parol maydoni bo'sh bo'lmasligi kerak.");
-//   }
-//   if (!passwordRegex.test(password)) {
-//     alert(
-//       "Parol kamida 8 ta belgidan iborat bo‘lishi va katta harf, kichik harf, raqamni o‘z ichiga olishi kerak."
-//     );
-//   }
-//   if (password !== confirmPassword) {
-//     alert("Parol va tasdiqlash bir xil bo‘lishi kerak.");
-//   }
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  if (!password) {
+    alert("Parol maydoni bo'sh bo'lmasligi kerak.");
+  }
+  if (!passwordRegex.test(password)) {
+    alert(
+      "Parol kamida 8 ta belgidan iborat bo‘lishi va katta harf, kichik harf, raqamni o‘z ichiga olishi kerak."
+    );
+  }
+  if (password !== confirmPassword) {
+    alert("Parol va tasdiqlash bir xil bo‘lishi kerak.");
+  }
 
-//   if (!address) {
-//     alert("Manzil maydoni bo'sh bo'lmasligi kerak.");
-//   }
+  if (!address) {
+    alert("Manzil maydoni bo'sh bo'lmasligi kerak.");
+  }
 
-//   if (address.length < 10) {
-//     alert("Manzilni to‘g‘ri kiriting. Kamida 10 ta belgi bo‘lishi kerak.");
-//   }
+  if (address.length < 10) {
+    alert("Manzilni to‘g‘ri kiriting. Kamida 10 ta belgi bo‘lishi kerak.");
+  }
 
-//   const postalCodeRegex = /^\d{5,6}$/;
-//   if (!postalCode) {
-//     alert("Pochta indeksini faqat raqamlardan iborat qilib kiriting.");
-//   }
-//   if (!postalCodeRegex.test(postalCode)) {
-//     alert("Pochta indeksini faqat raqamlardan iborat qilib kiriting.");
-//   }
+  const postalCodeRegex = /^\d{5,6}$/;
+  if (!postalCode) {
+    alert("Pochta indeksini faqat raqamlardan iborat qilib kiriting.");
+  }
+  if (!postalCodeRegex.test(postalCode)) {
+    alert("Pochta indeksini faqat raqamlardan iborat qilib kiriting.");
+  }
 
-//   if (!gender) {
-//     alert("Jinsingizni tanlang.");
-//   }
+  if (!gender) {
+    alert("Jinsingizni tanlang.");
+  }
 
-//   if (!interests) {
-//     alert("Qiziqishlar maydon bo'sh bo'lmasligi kerak.");
-//   }
-//   if (interests.length < 5) {
-//     alert("Qiziqishlaringizni kamida 5 ta belgi bilan yozing.");
-//   }
+  if (!interests) {
+    alert("Qiziqishlar maydon bo'sh bo'lmasligi kerak.");
+  }
+  if (interests.length < 5) {
+    alert("Qiziqishlaringizni kamida 5 ta belgi bilan yozing.");
+  }
 
-//   if (!termsChecked) {
-//     alert("Qoidalarga rozilik bildiring.");
-//   }
+  if (!termsChecked) {
+    alert("Qoidalarga rozilik bildiring.");
+  }
 
-//   return true;
-// }
+  return true;
+}
 
-// const firstNameInput = document.querySelector("#firstName");
-// const lastNameInput = document.querySelector("#lastName");
-// const ageInput = document.querySelector("#age");
-// const phoneInput = document.querySelector("#phone");
-// const emailInput = document.querySelector("#email");
-// const passwordInput = document.querySelector("#password");
-// const confirmPasswordInput = document.querySelector("#confirmPassword");
-// const addressInput = document.querySelector("#address");
-// const postalCodeInput = document.querySelector("#postalCode");
-// const genderInput = document.querySelector("#gender");
-// const interestsInput = document.querySelector("#interests");
-// const termsCheckbox = document.querySelector("#terms");
-// const submitButton = document.querySelector("#submitButton");
+const firstNameInput = document.querySelector("#firstName");
+const lastNameInput = document.querySelector("#lastName");
+const ageInput = document.querySelector("#age");
+const phoneInput = document.querySelector("#phone");
+const emailInput = document.querySelector("#email");
+const passwordInput = document.querySelector("#password");
+const confirmPasswordInput = document.querySelector("#confirmPassword");
+const addressInput = document.querySelector("#address");
+const postalCodeInput = document.querySelector("#postalCode");
+const genderInput = document.querySelector("#gender");
+const interestsInput = document.querySelector("#interests");
+const termsCheckbox = document.querySelector("#terms");
+const submitButton = document.querySelector("#submitButton");
 
-// submitButton &&
-//   submitButton.addEventListener("click", function (event) {
-//     event.preventDefault();
+submitButton &&
+  submitButton.addEventListener("click", function (event) {
+    event.preventDefault();
 
-//     const firstName = firstNameInput.value.trim();
-//     const lastName = lastNameInput.value.trim();
-//     const age = ageInput.value.trim();
-//     const phone = phoneInput.value.trim();
-//     const email = emailInput.value.trim();
-//     const password = passwordInput.value.trim();
-//     const confirmPassword = confirmPasswordInput.value.trim();
-//     const address = addressInput.value.trim();
-//     const postalCode = postalCodeInput.value.trim();
-//     const gender = genderInput.value;
-//     const interests = interestsInput.value.trim();
-//     const termsChecked = termsCheckbox.checked;
+    const firstName = firstNameInput.value.trim();
+    const lastName = lastNameInput.value.trim();
+    const age = ageInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+    const confirmPassword = confirmPasswordInput.value.trim();
+    const address = addressInput.value.trim();
+    const postalCode = postalCodeInput.value.trim();
+    const gender = genderInput.value;
+    const interests = interestsInput.value.trim();
+    const termsChecked = termsCheckbox.checked;
 
-//     const isValid = num(
-//       firstName,
-//       lastName,
-//       age,
-//       phone,
-//       email,
-//       password,
-//       confirmPassword,
-//       address,
-//       postalCode,
-//       gender,
-//       interests,
-//       termsChecked
-//     );
+    const isValid = num(
+      firstName,
+      lastName,
+      age,
+      phone,
+      email,
+      password,
+      confirmPassword,
+      address,
+      postalCode,
+      gender,
+      interests,
+      termsChecked
+    );
 
-//     if (!isValid) {
-//       return;
-//     }
-//   });
+    if (!isValid) {
+      return;
+    }
+  });
 
 // ==================================================================
 
@@ -208,15 +208,15 @@ save &&
 //Formada ikki ta parol kiritish maydoni (input) bo‘lsin: "Parol" va "Parolni tasdiqlash". Tugma bosilganda, agar ikkala parol bir-biriga teng bo‘lsa, foydalanuvchiga "Parol mos" degan xabar chiqsin, teng bo‘lmasa, "Parol mos emas" xabari chiqsin.
 
 const passwordForm = document.querySelector("#passwordForm");
-const passwordInput = document.querySelector("#password");
-const confirmPasswordInput = document.querySelector("#confirmPassword");
+const passwordInput3 = document.querySelector("#password3");
+const confirmPasswordInput3 = document.querySelector("#confirmPassword3");
 
 passwordForm &&
   passwordForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const password = passwordInput.value.trim();
-    const confirmPassword = confirmPasswordInput.value.trim();
+    const password = passwordInput3.value.trim();
+    const confirmPassword = confirmPasswordInput3.value.trim();
 
     if (password == confirmPassword) {
       alert("Parol mos!");
