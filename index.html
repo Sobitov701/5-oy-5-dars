@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body style="background-color: #fff">
     <form id="form">
       <input type="text" id="firstName" />
 
@@ -42,7 +42,7 @@
 
     <form id="nameForm">
       <input type="text" id="nameInput" placeholder="Ismingizni yozing" />
-      <button type="button" id="showNameButton">Ko‘rsat</button>
+      <button id="showNameButton">Ko‘rsat</button>
     </form>
     <div id="result"></div>
 
@@ -66,13 +66,76 @@
       <button type="submit">Tasdiqlash</button>
     </form>
 
-    <input type="text" id="imageUrl" placeholder="Rasm manzilini kiriting" />
-    <button id="button">Qo'shish</button>
-    <div id="output"></div>
+    <form id="colorForm">
+      <input type="color" id="colorInput" name="color" />
+      <button id="addColorButton">Div yaratish</button>
+    </form>
+    <div id="colorContainer"></div>
+
+    <form id="cityForm">
+      <input type="text" id="cityInput" placeholder="Shahar nomi" />
+      <button id="addCityButton">Qoshish</button>
+    </form>
+    <ul id="cityList"></ul>
+
+    <form id="messageForm">
+      <input
+        type="text"
+        id="messageInput"
+        placeholder="Xabaringizni yozing"
+        required
+      />
+      <button id="sendMessageButton">Xabar yuborish</button>
+    </form>
+    <div id="messageContainer"></div>
 
     <input type="text" id="taskInput" placeholder=" ishni kiriting" />
     <button id="addButton">Qo'shish</button>
     <ul id="taskList"></ul>
+
+    <input type="text" id="firstNameInput9" placeholder="Ismingizni kiriting" />
+    <input
+      type="text"
+      id="lastNameInput9"
+      placeholder="Familiyangizni kiriting"
+    />
+    <button id="addButton9">Qoshish</button>
+    <ul id="nameList"></ul>
+
+    <form id="wordForm">
+      <input type="text" id="wordInput" placeholder="So‘zni kiriting" />
+    </form>
+    <p>Soz uzunligi: <span id="wordLength">0</span></p>
+
+    <!-- <ul id="countryList">
+    <li>Ozbekiston</li>
+    <li>Qozogiston</li>
+    <li>Tojikiston</li>
+    <li>Kirgiziston</li>
+    <li>Turkmaniston</li>
+  </ul>
+  <button id="sortButton">Saralash</button> -->
+
+    <input type="text" id="textInput" placeholder="Matn kiriting" />
+    <button id="confirmButton" disabled>Tasdiqlash</button>
+
+    <input type="text" id="firstName13" placeholder="Ismingizni kiriting" />
+    <input type="text" id="lastName13" placeholder="Familiyangizni kiriting" />
+    <input
+      type="email"
+      id="email13"
+      placeholder="Email manzilingizni kiriting"
+    />
+    <button id="clearButton">Tozalash</button>
+
+    <input type="text" id="searchInput" placeholder="Ismni qidirish" />
+    <ul id="userList">
+      <li class="user">Ali</li>
+      <li class="user">Feruza</li>
+      <li class="user">Johon</li>
+      <li class="user">Salah</li>
+      <li class="user">Zidan</li>
+    </ul>
 
     <script src="./index.js"></script>
   </body>

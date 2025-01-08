@@ -168,6 +168,7 @@ submitButton &&
 const nameInput = document.querySelector("#nameInput");
 const showNameButton = document.querySelector("#showNameButton");
 const resultDiv = document.querySelector("#result");
+
 showNameButton &&
   showNameButton.addEventListener("click", function () {
     const name = nameInput.value.trim();
@@ -228,19 +229,73 @@ passwordForm &&
 //4-misol
 //Formada rang kiritish maydoni (color input) bo‘lsin. Foydalanuvchi rangni tanlagandan so‘ng, sahifada yangi div yaratiladi va tanlangan rang bilan bo‘yaladi.
 
+const colorInput = document.getElementById("colorInput");
+const addColorButton = document.getElementById("addColorButton");
+const colorContainer = document.getElementById("colorContainer");
+
+addColorButton &&
+  addColorButton.addEventListener("click", () => {
+    const selectedColor = colorInput.value;
+    const newDiv = document.createElement("div");
+
+    newDiv.style.width = "100px";
+    newDiv.style.height = "100px";
+    newDiv.style.margin = "10px";
+    newDiv.style.display = "inline-block";
+    newDiv.style.backgroundColor = selectedColor;
+
+    colorContainer.appendChild(newDiv);
+  });
+
 //5-misol
-//Foydalanuvchi formadagi Element turi (masalan, <div>, <p>) va Element mazmuni maydonlariga ma’lumot kiritsa, Yaratish tugmasi bosilganda shu element sahifada paydo bo‘lsin.
+// Sahifada bir matnli input va "Qo‘shish" tugmasi bo‘lsin. Foydalanuvchi inputga biror shahar nomini yozib, tugmani bossa, shahar nomi ro‘yxatga (ul ichida li) qo‘shiladi.
+
+const cityInput = document.getElementById("cityInput");
+const addCityButton = document.getElementById("addCityButton");
+const cityList = document.getElementById("cityList");
+addCityButton &&
+  addCityButton.addEventListener("click", () => {
+    const cityName = cityInput.value.trim();
+
+    if (cityName) {
+      const listItem = document.createElement("li");
+      listItem.textContent = cityName;
+      cityList.appendChild(listItem);
+
+      cityInput.value = "";
+    } else {
+      alert("Shahar nomini kiriting!");
+    }
+  });
 
 //6-misol
-//Foydalanuvchi formadagi Rasm URL maydoniga rasm linkini kiritib, Qo‘shish tugmasini bossin.
+//Formada matnli input va "Xabar yuborish" tugmasi bo‘lsin. Tugma bosilgandan so‘ng, inputdagi matn sahifada yangi blokda ko‘rsatiladi va input maydoni tozalanadi.
 
-const button = document.getElementById("button");
-const imageUrlInput = document.getElementById("imageUrl");
-const outputDiv = document.getElementById("output");
+const messageInput = document.getElementById("messageInput");
+const sendMessageButton = document.getElementById("sendMessageButton");
+const messageContainer = document.getElementById("messageContainer");
+sendMessageButton &&
+  sendMessageButton.addEventListener("click", () => {
+    const messageText = messageInput.value.trim();
 
-button &&
-  button.addEventListener("click", () => {
-    const imageUrl = imageUrlInput.value.trim();
+    if (messageText) {
+      const messageBlock = document.createElement("div");
+
+      messageBlock.style.border = "1px solid #ccc";
+      messageBlock.style.padding = "10px";
+      messageBlock.style.margin = "10px 0";
+      messageBlock.style.backgroundColor = "#f9f9f9";
+      messageBlock.style.borderRadius = "5px";
+      messageBlock.style.fontSize = "16px";
+      messageBlock.style.color = "#333";
+
+      messageBlock.textContent = messageText;
+      messageContainer.appendChild(messageBlock);
+
+      messageInput.value = "";
+    } else {
+      alert("Xabar kiriting!");
+    }
   });
 
 //7-misol
@@ -250,33 +305,130 @@ const addButton = document.getElementById("addButton");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 
-addButton.addEventListener("click", function () {
-  const taskText = taskInput.value.trim();
+addButton &&
+  addButton.addEventListener("click", function () {
+    const taskText = taskInput.value.trim();
 
-  const listItem = document.createElement("li");
+    const listItem = document.createElement("li");
 
-  listItem.textContent = taskText;
+    listItem.textContent = taskText;
 
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
 
-  const deleteButton = document.createElement("button");
-  deleteButton.textContent = "O‘chirish";
-  deleteButton.addEventListener("click", function () {
-    taskList.removeChild(listItem);
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "O‘chirish";
+    deleteButton.addEventListener("click", function () {
+      taskList.removeChild(listItem);
+    });
+
+    listItem.prepend(checkbox);
+    listItem.appendChild(deleteButton);
+
+    taskList.appendChild(listItem);
   });
 
-  listItem.prepend(checkbox);
-  listItem.appendChild(deleteButton);
-
-  taskList.appendChild(listItem);
-});
-
 //8-misol
-//Formada foydalanuvchi o‘z ismi va jinsini tanlashi kerak.
+//Formada matnli input bo‘lsin. Foydalanuvchi inputga "red", "green", yoki "blue" kabi rang nomini yozsa, sahifaning fon rangi o‘zgaradi.
 
 //9-misol
-//Formada ikkita son kiritish maydoni (Son 1, Son 2) va Operatsiya (masalan, qo‘shish, ayirish) tanlash uchun select bo‘lsin.
+//Formada ism va familiya kiritish uchun ikkita input bo‘lsin. "Qo‘shish" tugmasi bosilganda, kiritilgan ism va familiya ro‘yxatga qo‘shiladi.
+
+const firstNameInput9 = document.getElementById("firstNameInput9");
+const lastNameInput9 = document.getElementById("lastNameInput9");
+const addButton9 = document.getElementById("addButton9");
+const nameList = document.getElementById("nameList");
+
+addButton9 &&
+  addButton9.addEventListener("click", () => {
+    const firstName = firstNameInput9.value.trim();
+    const lastName = lastNameInput9.value.trim();
+
+    if (firstName && lastName) {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${firstName} ${lastName}`;
+      nameList.appendChild(listItem);
+
+      firstNameInput9.value = "";
+      lastNameInput9.value = "";
+    } else {
+      alert("Iltimos, ism va familiyani kiriting!");
+    }
+  });
 
 //10-misol
-// Foydalanuvchi formadagi Mahsulot nomi, Narxi va Soni maydonlarini to‘ldirib, Qo‘shish tugmasini bossa, savatchaga mahsulot qo‘shiladi.
+// Formada bir matnli input bo‘lsin. Foydalanuvchi inputga biror so‘z kiritganda, uning uzunligi (harflar soni) sahifada ko‘rsatiladi.
+
+const wordInput = document.getElementById("wordInput");
+const wordLength = document.getElementById("wordLength");
+wordInput &&
+  wordInput.addEventListener("input", () => {
+    const word = wordInput.value.trim();
+    wordLength.textContent = word.length;
+  });
+
+//11-misol
+//Sahifada davlatlar ro‘yxati (ul) bo‘lsin. Formada "Saralash" tugmasi bo‘lsin. Tugma bosilganda, davlatlar ro‘yxati alifbo bo‘yicha qayta tartiblanadi.
+
+//12-misol
+//Formada bir input va "Tasdiqlash" tugmasi bo‘lsin. Dastlab tugma faol bo‘lmasin (disabled). Inputga biror matn kiritilganda, tugma faollashsin.
+
+const textInput = document.getElementById("textInput");
+const confirmButton = document.getElementById("confirmButton");
+
+textInput.addEventListener("input", function () {
+  if (textInput.value.trim() !== "") {
+    confirmButton.disabled = false;
+  } else {
+    confirmButton.disabled = true;
+  }
+});
+
+//13-misol
+//Formada bir nechta input bo‘lsin (ism, familiya, email). "Tozalash" tugmasi bosilganda, barcha inputlar bo‘shatiladi.
+
+const clearButton = document.getElementById("clearButton");
+const firstName = document.getElementById("firstName13");
+const lastName = document.getElementById("lastName13");
+const email = document.getElementById("email13");
+
+clearButton.addEventListener("click", function () {
+  firstName.value = "";
+  lastName.value = "";
+  email.value = "";
+});
+
+//14-misol
+// Foydalanuvchi ro‘yxati (ul) va qidiruv inputi bo‘lsin. Foydalanuvchi qidiruv maydoniga biror ism yozganda, faqat shu ismga mos keladigan foydalanuvchi ko‘rsatiladi, qolganlari yashiriladi.
+
+const style = document.createElement("style");
+style.innerHTML = `
+      .user {
+        list-style-type: none;
+        padding: 5px;
+      }
+
+      .user.hidden {
+        display: none;
+      }
+    `;
+document.head.appendChild(style);
+
+const searchInput = document.getElementById("searchInput");
+const userList = document.getElementById("userList");
+const users = document.querySelectorAll(".user");
+
+searchInput.addEventListener("input", function () {
+  const query = searchInput.value.toLowerCase();
+  users.forEach(function (user) {
+    const userName = user.textContent.toLowerCase();
+    if (userName.includes(query)) {
+      user.classList.remove("hidden");
+    } else {
+      user.classList.add("hidden");
+    }
+  });
+});
+
+//15-misol
+// Sahifada matn ko‘rinishida bir div bo‘lsin. "Tahrirlash" tugmasi bosilganda, matn inputga aylansin va foydalanuvchi matnni tahrir qilishi mumkin. "Saqlash" tugmasi bosilganda, inputdagi matn yana div ko‘rinishida aks etsin.
