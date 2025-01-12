@@ -361,6 +361,7 @@ addButton9 &&
 
 const wordInput = document.getElementById("wordInput");
 const wordLength = document.getElementById("wordLength");
+
 wordInput &&
   wordInput.addEventListener("input", () => {
     const word = wordInput.value.trim();
@@ -376,13 +377,14 @@ wordInput &&
 const textInput = document.getElementById("textInput");
 const confirmButton = document.getElementById("confirmButton");
 
-textInput.addEventListener("input", function () {
-  if (textInput.value.trim() !== "") {
-    confirmButton.disabled = false;
-  } else {
-    confirmButton.disabled = true;
-  }
-});
+textInput &&
+  textInput.addEventListener("input", function () {
+    if (textInput.value.trim() !== "") {
+      confirmButton.disabled = false;
+    } else {
+      confirmButton.disabled = true;
+    }
+  });
 
 //13-misol
 //Formada bir nechta input bo‘lsin (ism, familiya, email). "Tozalash" tugmasi bosilganda, barcha inputlar bo‘shatiladi.
@@ -392,11 +394,12 @@ const firstName = document.getElementById("firstName13");
 const lastName = document.getElementById("lastName13");
 const email = document.getElementById("email13");
 
-clearButton.addEventListener("click", function () {
-  firstName.value = "";
-  lastName.value = "";
-  email.value = "";
-});
+clearButton &&
+  clearButton.addEventListener("click", function () {
+    firstName.value = "";
+    lastName.value = "";
+    email.value = "";
+  });
 
 //14-misol
 // Foydalanuvchi ro‘yxati (ul) va qidiruv inputi bo‘lsin. Foydalanuvchi qidiruv maydoniga biror ism yozganda, faqat shu ismga mos keladigan foydalanuvchi ko‘rsatiladi, qolganlari yashiriladi.
@@ -418,17 +421,43 @@ const searchInput = document.getElementById("searchInput");
 const userList = document.getElementById("userList");
 const users = document.querySelectorAll(".user");
 
-searchInput.addEventListener("input", function () {
-  const query = searchInput.value.toLowerCase();
-  users.forEach(function (user) {
-    const userName = user.textContent.toLowerCase();
-    if (userName.includes(query)) {
-      user.classList.remove("hidden");
-    } else {
-      user.classList.add("hidden");
-    }
+searchInput &&
+  searchInput.addEventListener("input", function () {
+    const query = searchInput.value.toLowerCase();
+    users.forEach(function (user) {
+      const userName = user.textContent.toLowerCase();
+      if (userName.includes(query)) {
+        user.classList.remove("hidden");
+      } else {
+        user.classList.add("hidden");
+      }
+    });
   });
-});
 
 //15-misol
 // Sahifada matn ko‘rinishida bir div bo‘lsin. "Tahrirlash" tugmasi bosilganda, matn inputga aylansin va foydalanuvchi matnni tahrir qilishi mumkin. "Saqlash" tugmasi bosilganda, inputdagi matn yana div ko‘rinishida aks etsin.
+
+const container = document.getElementById("container");
+const textDisplay = document.getElementById("text-display");
+const editBtn = document.getElementById("edit-btn");
+
+edit &&
+  editBtn.addEventListener("click", function () {
+    if (editBtn.textContent === "Tahrirlash") {
+      const input = document.createElement("input");
+      input.type = "text";
+      input.id = "text-input";
+      input.value = textDisplay.textContent;
+      container.replaceChild(input, textDisplay);
+
+      editBtn.textContent = "Saqlash";
+    } else {
+      const input = document.getElementById("text-input");
+      const newText = document.createElement("div");
+      newText.id = "text-display";
+      newText.textContent = input.value;
+      container.replaceChild(newText, input);
+
+      editBtn.textContent = "Tahrirlash";
+    }
+  });
